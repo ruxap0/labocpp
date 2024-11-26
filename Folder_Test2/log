@@ -1,0 +1,149 @@
+In file included from Test2.cpp:3:
+Classes/Event.h:15:14: error: le C++ ISO interdit l'initialisation intra-classe du membre statique non constant « Event::currentCode »
+   static int currentCode = 1;
+              ^~~~~~~~~~~
+In file included from Test2.cpp:4:
+Classes/Time.h:1:7: error: redéfinition de « class Time »
+ class Time
+       ^~~~
+In file included from Classes/Timing.h:2,
+                 from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Time.h:1:7: note: définition précédente de « class Time »
+ class Time
+       ^~~~
+In file included from Classes/Timing.h:2,
+                 from Test2.cpp:5:
+Classes/Time.h:1:7: error: redéfinition de « class Time »
+ class Time
+       ^~~~
+In file included from Classes/Timing.h:2,
+                 from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Time.h:1:7: note: définition précédente de « class Time »
+ class Time
+       ^~~~
+In file included from Test2.cpp:5:
+Classes/Timing.h:5:7: error: redéfinition de « class Timing »
+ class Timing
+       ^~~~~~
+In file included from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Timing.h:5:7: note: définition précédente de « class Timing »
+ class Timing
+       ^~~~~~
+Test2.cpp:7:17: error: « planning » n'est pas un espace de noms
+ using namespace planning;
+                 ^~~~~~~~
+Test2.cpp:7:25: error: expected namespace-name before « ; » token
+ using namespace planning;
+                         ^
+Test2.cpp: Dans la fonction « void Essai3() »:
+Test2.cpp:123:36: error: impossible de lier la référence d'une l-valeur non constante de type « Time& » à une r-valeur de type « Time »
+     event.setTiming(Timing("Mardi",Time(20,0),Time(180)));
+                                    ^~~~~~~~~~
+In file included from Classes/Timing.h:2,
+                 from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Time.h:11:9: note:   initialisation de l'argument 1 de « Time::Time(Time&) »
+         Time(Time &temp);
+         ^~~~
+In file included from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Timing.h:22:9: note:   initialisation de l'argument 2 de « Timing::Timing(std::__cxx11::string, Time, Time) »
+         Timing(string day, Time start, Time duration);
+         ^~~~~~
+Test2.cpp:129:31: error: le passage de « const Timing » comme argument « this » abandonne les qualificatifs [-fpermissive]
+     event.getTiming().display();
+                               ^
+In file included from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Timing.h:33:14: note:   dans l'appel de « void Timing::display() »
+         void display();
+              ^~~~~~~
+Test2.cpp:136:39: error: impossible de lier la référence d'une l-valeur non constante de type « Time& » à une r-valeur de type « Time »
+     event.setTiming(Timing("Vendredi",Time(19,30),Time(150)));
+                                       ^~~~~~~~~~~
+In file included from Classes/Timing.h:2,
+                 from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Time.h:11:9: note:   initialisation de l'argument 1 de « Time::Time(Time&) »
+         Time(Time &temp);
+         ^~~~
+In file included from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Timing.h:22:9: note:   initialisation de l'argument 2 de « Timing::Timing(std::__cxx11::string, Time, Time) »
+         Timing(string day, Time start, Time duration);
+         ^~~~~~
+Test2.cpp:144:37: error: impossible de lier la référence d'une l-valeur non constante de type « Time& » à une r-valeur de type « Time »
+     event1.setTiming(Timing("Lundi",Time(8,20),Time(90)));
+                                     ^~~~~~~~~~
+In file included from Classes/Timing.h:2,
+                 from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Time.h:11:9: note:   initialisation de l'argument 1 de « Time::Time(Time&) »
+         Time(Time &temp);
+         ^~~~
+In file included from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Timing.h:22:9: note:   initialisation de l'argument 2 de « Timing::Timing(std::__cxx11::string, Time, Time) »
+         Timing(string day, Time start, Time duration);
+         ^~~~~~
+Test2.cpp:153:39: error: impossible de lier la référence d'une l-valeur non constante de type « Time& » à une r-valeur de type « Time »
+       event2.setTiming(Timing("Jeudi",Time(13,30),Time(90)));
+                                       ^~~~~~~~~~~
+In file included from Classes/Timing.h:2,
+                 from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Time.h:11:9: note:   initialisation de l'argument 1 de « Time::Time(Time&) »
+         Time(Time &temp);
+         ^~~~
+In file included from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Timing.h:22:9: note:   initialisation de l'argument 2 de « Timing::Timing(std::__cxx11::string, Time, Time) »
+         Timing(string day, Time start, Time duration);
+         ^~~~~~
+Test2.cpp: Dans la fonction « void Essai4() »:
+Test2.cpp:183:39: error: impossible de lier la référence d'une l-valeur non constante de type « Time& » à une r-valeur de type « Time »
+   e1.setTiming(Timing(Timing::TUESDAY,Time(8,20),Time(90)));
+                                       ^~~~~~~~~~
+In file included from Classes/Timing.h:2,
+                 from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Time.h:11:9: note:   initialisation de l'argument 1 de « Time::Time(Time&) »
+         Time(Time &temp);
+         ^~~~
+In file included from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Timing.h:22:9: note:   initialisation de l'argument 2 de « Timing::Timing(std::__cxx11::string, Time, Time) »
+         Timing(string day, Time start, Time duration);
+         ^~~~~~
+Test2.cpp:192:41: error: impossible de lier la référence d'une l-valeur non constante de type « Time& » à une r-valeur de type « Time »
+   e2.setTiming(Timing(Timing::WEDNESDAY,Time(13,30),Time(120)));
+                                         ^~~~~~~~~~~
+In file included from Classes/Timing.h:2,
+                 from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Time.h:11:9: note:   initialisation de l'argument 1 de « Time::Time(Time&) »
+         Time(Time &temp);
+         ^~~~
+In file included from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Timing.h:22:9: note:   initialisation de l'argument 2 de « Timing::Timing(std::__cxx11::string, Time, Time) »
+         Timing(string day, Time start, Time duration);
+         ^~~~~~
+Test2.cpp:202:40: error: impossible de lier la référence d'une l-valeur non constante de type « Time& » à une r-valeur de type « Time »
+   e3.setTiming(Timing(Timing::THURSDAY,Time(10,30),Time(120)));
+                                        ^~~~~~~~~~~
+In file included from Classes/Timing.h:2,
+                 from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Time.h:11:9: note:   initialisation de l'argument 1 de « Time::Time(Time&) »
+         Time(Time &temp);
+         ^~~~
+In file included from Classes/Event.h:1,
+                 from Test2.cpp:3:
+Classes/Timing.h:22:9: note:   initialisation de l'argument 2 de « Timing::Timing(std::__cxx11::string, Time, Time) »
+         Timing(string day, Time start, Time duration);
+         ^~~~~~
+make: *** [<commande interne>: Test2.o] Error 1

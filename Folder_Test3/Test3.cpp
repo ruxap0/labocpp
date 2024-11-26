@@ -1,10 +1,10 @@
-//#include <stdlib.h>
 #include <iostream>
-using namespace std;
-#include "Time.h"
-#include "Timing.h"
-#include "Event.h"
+#include <stdlib.h>
+#include "./Classes/Time.h"
+#include "./Classes/Timing.h"
+#include "./Classes/Event.h"
 
+using namespace std;
 using namespace planning;
 
 int  Menu();
@@ -231,6 +231,7 @@ void Essai4()
   Time h2(10,20);
   cout << endl << "h2 : ";
   h2.display();
+  cout << endl;
 
   cout << "Comparaison des heures : ";
   if (h1 < h2) cout << "h1 < h2" << endl;

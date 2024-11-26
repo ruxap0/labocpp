@@ -1,10 +1,9 @@
 #include <stdlib.h>
 #include <iostream>
+#include "Classes/Event.h"
+#include "Classes/Time.h"
+#include "Classes/Timing.h"
 using namespace std;
-#include "Time.h"
-#include "Timing.h"
-#include "Event.h"
-
 using namespace planning;
 
 int  Menu();
@@ -268,4 +267,3 @@ void Essai4()
   cout << "e2.currentCode = " << e2.currentCode << endl;
   cout << "e3.currentCode = " << e3.currentCode << endl << endl;
 }
-

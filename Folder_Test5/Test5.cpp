@@ -1,8 +1,10 @@
 #include <iostream>
 
-#include "Time.h"
-#include "Timing.h"
-#include "Event.h"
+#include "./Classes/Time.h"
+#include "./Classes/Timing.h"
+#include "./Classes/Event.h"
+#include "./Classes/TimeException.h"
+//#include "./Classes/TimingException.h"
 
 using namespace std;
 using namespace planning;
@@ -90,6 +92,7 @@ void Essai1()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     int hour,minute;
     cout << "Entrez l'heure h1 :" << endl;
@@ -115,8 +118,11 @@ void Essai1()
     cout << "--> d1 = " << d1 << endl << endl;    
   }
   // ...
-  
-  cout << endl;
+  catch()
+  {
+
+    cout << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -127,6 +133,7 @@ void Essai2()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     Time h(15,30);
     cout << "h = Time(15,30)" << endl;
@@ -148,6 +155,7 @@ void Essai3()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     Time h(15,30);
     cout << "h = Time(15,30)" << endl;
@@ -169,6 +177,7 @@ void Essai4()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     Time h(1,30);
     cout << "h = Time(1,30)" << endl;
@@ -190,6 +199,7 @@ void Essai5()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     Time h(1,30);
     cout << "h = Time(1,30)" << endl;
@@ -211,6 +221,7 @@ void Essai6()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     Time h1(22,30);
     cout << "h1 = Time(22,30)" << endl;
@@ -234,6 +245,7 @@ void Essai7()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     Time d(120);
     cout << "d = " << d << endl;
@@ -255,6 +267,7 @@ void Essai8()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     Time h;
     cout << "Entrez l'heure h = "; cin >> h;
@@ -275,6 +288,7 @@ void Essai9()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     Time h;
     cout << "Entrez l'heure h = "; cin >> h;
@@ -295,6 +309,7 @@ void Essai10()
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
   // ...
+  try
   {
     Timing t;
     string day;
@@ -315,6 +330,7 @@ void Essai11()
   // A COMPLETER : Traitez TOUTES les exceptions susceptible d'etre lancee par le bloc de code suivant (try...catch)
 
   // ...
+  try
   {
     Timing t;
     string day;
