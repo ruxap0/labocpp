@@ -4,7 +4,7 @@
 #include "./Classes/Timing.h"
 #include "./Classes/Event.h"
 #include "./Classes/TimeException.h"
-//#include "./Classes/TimingException.h"
+#include "./Classes/TimingException.h"
 
 using namespace std;
 using namespace planning;
@@ -107,7 +107,7 @@ void Essai1()
     cout << "--> h1 = " << h1 << endl << endl;
 
     cout << "On modifie les minutes de h1 : " << endl;
-    cout << "Nouvelles minutes : "; cin >> minute; 
+    cout << "Nouvelles minutes : "; cin >> minute;
     h1.setMinute(minute); // !!!
     cout << "--> h1 = " << h1 << endl << endl;
 
@@ -118,10 +118,9 @@ void Essai1()
     cout << "--> d1 = " << d1 << endl << endl;    
   }
   // ...
-  catch()
+  catch(const TimeException &tmp)
   {
-
-    cout << endl;
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
   }
 }
 
@@ -143,8 +142,10 @@ void Essai2()
     cout << "Apres addition (h = h + duration) --> " << h << endl << endl; 
   }
   // ...
-  
-  cout << endl;
+  catch(const TimeException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -166,7 +167,10 @@ void Essai3()
   }
   // ...
   
-  cout << endl;
+  catch(const TimeException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -188,7 +192,10 @@ void Essai4()
   }
   // ...
   
-  cout << endl;
+  catch(const TimeException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -210,7 +217,10 @@ void Essai5()
   }
   // ...
   
-  cout << endl;
+  catch(const TimeException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -234,7 +244,10 @@ void Essai6()
   }
   // ...
   
-  cout << endl;
+  catch(const TimeException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -256,7 +269,10 @@ void Essai7()
   }
   // ...
   
-  cout << endl;
+  catch(const TimeException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -277,7 +293,10 @@ void Essai8()
   }
   // ...
   
-  cout << endl;
+  catch(const TimeException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -298,7 +317,10 @@ void Essai9()
   }
   // ...
   
-  cout << endl;
+  catch(const TimeException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -320,7 +342,10 @@ void Essai10()
   }
   // ...
   
-  cout << endl;
+  catch(const TimingException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
 
 /**********************************************************************************************/
@@ -358,10 +383,18 @@ void Essai11()
     cin >> ch;
     cin.ignore();
     if (ch == 'o') e.setTiming(t);
-    cout << "Voici le Timing de l'Event planifie : ";
+    cout << "Voici le Timing de l'Event planifie : " <<endl;
+    //e.getTiming();  // !!!
     e.getTiming().display();  // !!!
   }
-  // ...
+  
+  catch(const TimeException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
+
+  catch(const TimingException &tmp)
+  {
+    cout << "Exception catched - " << tmp.getCode() << tmp.getMessage() << endl;
+  }
 }
-
-

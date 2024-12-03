@@ -101,4 +101,60 @@ namespace planning
 
 		return (*timing);		
 	}
+
+	//*********************************************************************************//
+	//Méthodes amies
+	//*********************************************************************************//
+	ostream& operator<<(ostream& out, const Event& e)
+	{
+		out << "<Event>" << endl;
+		out << "<code>" << endl;
+		out << e.code << endl;
+		out << "</code>" << endl;
+		out << "<title>" << endl;
+		out << e.title << endl;
+		out << "</title>" << endl;
+		
+		if(e.timing != nullptr)
+		{
+			out << "<timing>" << endl;
+			out << *e.timing;
+			out << "</timing>" << endl;
+		}
+
+		out << "</Event>" << endl;
+
+		return out;
+	}
+
+	istream& operator>>(istream& in, Event& e)
+	{
+		string eventCode, tag, eventTitle;
+		Timing t;
+
+		getline(in, tag);
+		getline(in, tag);
+		getline(in, eventCode);
+		getline(in, tag);
+		getline(in, tag);
+		getline(in, eventTitle);
+		getline(in, tag);
+		getline(in, tag);
+		if(tag == "<timing>")
+		{
+			in >> t;
+			e.timing = new Timing;
+			e.timing->setDay(t.getDay());
+			e.timing->setStart(t.getStart());
+			e.timing->setDuration(t.getDuration());
+			getline(in, tag);
+		}
+
+		getline(in, tag);
+
+		e.code = stoi(eventCode);
+		strcpy(e.title, eventTitle.c_str());
+
+		return in;
+	}
 }

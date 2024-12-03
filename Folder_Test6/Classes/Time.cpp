@@ -199,7 +199,7 @@ namespace planning
     
     bool Time::operator==(const Time &h2) const
     {
-        if(this->hour == h2.getHour() and this->minute == this->minute)
+        if(this->hour == h2.getHour() and this->minute == h2.minute)
             return true;
         else
             return false;
@@ -223,27 +223,35 @@ namespace planning
 
     ostream& operator<<(ostream& out, const Time& time)
     {
-        out << std::setfill('0') << std::setw(2) << time.hour << "h" << std::setfill('0') << std::setw(2) << time.getMinute();
+        out << "<Time>" << endl;
+        out << "<hour>" << endl;
+        out << time.hour << endl;
+        out << "</hour>" << endl;
+        out << "<minute>" << endl;
+        out << time.minute << endl;
+        out << "</minute>" << endl;
+        out << "</Time>" << endl;
 
         return out;
     }
     
     istream& operator>>(istream& in, Time& time)
     {
-        char separator;
-        bool check = false;
+        string timeHour, timeMinute, tag;
 
-        do {
-            cout << "Time you want : ";
-            in >> time.hour >> separator >> time.minute;
-            cout << endl;
+        getline(in, tag);
+        getline(in, tag);
+        getline(in, timeHour);
+        getline(in, tag);
+        getline(in, tag);
+        getline(in, timeMinute);
+        getline(in, tag);
+        getline(in, tag);
 
-            if (separator != 'h' && separator != ':' || time.hour < 0 || time.hour > 23 || time.minute < 0 || time.minute > 59)
-                cout << "Error in Time encoding... Try again" << endl;
-            else
-                check = true;
+        //cout << timeHour << "-------" << timeMinute << endl;
 
-        }while(!check);
+        time.hour = stoi(timeHour);
+        time.minute = stoi(timeMinute);
 
         return in;
     }
@@ -292,5 +300,3 @@ namespace planning
         return temp;
     }
 }
-
-

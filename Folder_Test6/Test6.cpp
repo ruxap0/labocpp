@@ -2,10 +2,10 @@
 #include <fstream>
 using namespace std;
 
-#include "Time.h"
-#include "Classroom.h"
-#include "Timing.h"
-#include "Event.h"
+#include "./Classes/Time.h"
+#include "./Classes/Classroom.h"
+#include "./Classes/Timing.h"
+#include "./Classes/Event.h"
 
 using namespace planning;
 

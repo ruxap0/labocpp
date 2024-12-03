@@ -109,7 +109,7 @@ namespace planning
         if (day == FRIDAY) return 5;
         if (day == SATURDAY) return 6;
         if (day == SUNDAY) return 7;
-           return -1;
+        return -1;
     }
 
     int Timing::compTiming(const Timing &t2) const 
@@ -141,6 +141,45 @@ namespace planning
     int Timing::operator==(const Timing &t2) const
     {
         return compTiming(t2) == 0;
+    }
+
+    ostream& operator<<(ostream& out, const Timing& t)
+    {
+        out << "<Timing>" << endl;
+        out << "<day>" << endl;
+        out << t.day << endl;
+        out << "</day>" << endl;
+        out << "<start>" << endl;
+        out << t.start;
+        out << "</start>" << endl;
+        out << "<duration>" << endl;
+        out << t.duration;
+        out << "</duration>" << endl;
+        out << "</Timing>" << endl;
+
+        return out;
+    }
+
+    istream& operator>>(istream& in, Timing& t)
+    {
+        string timingDay, tag;
+
+        getline(in, tag);
+        getline(in, tag);
+        getline(in, timingDay);
+        getline(in, tag);
+        getline(in, tag);
+        cout << endl << timingDay << endl;
+        in >> t.start;
+        getline(in, tag);
+        getline(in, tag);
+        in >> t.duration;
+        getline(in, tag);
+        getline(in, tag);
+
+        t.day = timingDay;
+
+        return in;
     }
 
 }

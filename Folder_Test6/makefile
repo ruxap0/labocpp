@@ -2,20 +2,20 @@
 
 .SILENT:
 
-OBJECTS = Test5.o Event.o Time.o Timing.o Exception.o TimeException.o TimingException.o
+OBJECTS = Test6.o Event.o Time.o Timing.o Exception.o TimeException.o TimingException.o Schedulable.o Group.o Professor.o Classroom.o
 CLASSPATH = ./Classes/
-PROGRAMS = Test5
+PROGRAMS = Test6
 
 all : $(PROGRAMS)
 
 
-Test5 : $(OBJECTS)
-	echo Compilation de Test5
-	g++ -o Test5 $(OBJECTS) -fsanitize=undefined -fsanitize=address -g
+Test6 : $(OBJECTS)
+	echo Compilation de Test6
+	g++ -o Test6 $(OBJECTS) -fsanitize=undefined -fsanitize=address -g
 
-Test5.o : Test5.cpp
-	echo Compilation de Test5.o
-	g++ -c -o Test5.o Test5.cpp -fsanitize=undefined -fsanitize=address -g -D DEBUG
+Test6.o : Test6.cpp
+	echo Compilation de Test6.o
+	g++ -c -o Test6.o Test6.cpp -fsanitize=undefined -fsanitize=address -g -D DEBUG
 
 Event.o : $(CLASSPATH)Event.cpp $(CLASSPATH)Event.h
 	echo Compilation de Event.o
@@ -41,7 +41,23 @@ TimingException.o : $(CLASSPATH)TimingException.cpp $(CLASSPATH)TimingException.
 	echo Compilation de TimingException.o
 	g++ -c -o TimingException.o $(CLASSPATH)TimingException.cpp -fsanitize=undefined -fsanitize=address -g -D DEBUG
 
+Schedulable.o : $(CLASSPATH)Schedulable.cpp $(CLASSPATH)Schedulable.h
+	echo Compilation de Schedulable.o
+	g++ -c -o Schedulable.o $(CLASSPATH)Schedulable.cpp -fsanitize=undefined -fsanitize=address -g -D DEBUG
+
+Group.o : $(CLASSPATH)Group.cpp $(CLASSPATH)Group.h Schedulable.o
+	echo Compilation de Group.o
+	g++ -c -o Group.o $(CLASSPATH)Group.cpp -fsanitize=undefined -fsanitize=address -g -D DEBUG
+
+Professor.o : $(CLASSPATH)Professor.cpp $(CLASSPATH)Professor.h Schedulable.o
+	echo Compilation de Professor.o
+	g++ -c -o Professor.o $(CLASSPATH)Professor.cpp -fsanitize=undefined -fsanitize=address -g -D DEBUG
+
+Classroom.o : $(CLASSPATH)Classroom.cpp $(CLASSPATH)Classroom.h Schedulable.o
+	echo Compilation de Classroom.o
+	g++ -c -o Classroom.o $(CLASSPATH)Classroom.cpp -fsanitize=undefined -fsanitize=address -g -D DEBUG
 
 
 clean :
 	rm -f $(PROGRAMS) $(OBJECTS)
+	rm -f *.xml
